@@ -1,6 +1,6 @@
 # Stormbrew
 
-**TODO: Add description**
+**Stormbrew is a collection of basic utilities that extend functionality in the core Elixir language.**
 
 ## Installation
 

@@ -10,7 +10,7 @@
 # alphanumeric()
 # type()
 ###############################################################################
-defmodule Pyxidust do
+defmodule Utils do
     @moduledoc """
     Basic extensions for Elixir.
     """
@@ -30,8 +30,8 @@ defmodule Pyxidust do
         USAGE:
         ------
         # default option is lowercase
-        Pyxidust.alphabet() -> "abcdefghijklmnopqrstuvwxyz"
-        Pyxidust.alphabet("upper") -> "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        Utils.alphabet() -> "abcdefghijklmnopqrstuvwxyz"
+        Utils.alphabet("upper") -> "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         """
         cond do
             option === "lower" ->
@@ -57,7 +57,7 @@ defmodule Pyxidust do
         USAGE:
         ------
         # input type must be list
-        Pyxidust.alphanumeric([1, "A", 3]) -> "1A3"
+        Utils.alphanumeric([1, "A", 3]) -> "1A3"
         """
         # assert input type was list
         if type(values) !== "list" do
@@ -81,13 +81,13 @@ defmodule Pyxidust do
     ------
     USAGE:
     ------
-    Pyxidust.random_string(:lower) -> "s"
-    Pyxidust.random_string(:upper) -> "E"
-    Pyxidust.random_string(:number) -> "6"
-    Pyxidust.random_string(:lower_alpha) -> "2", "c", ...
-    Pyxidust.random_string(:upper_alpha) -> "S", "8", ...
-    Pyxidust.random_string(:combo_alpha) -> "e", "6", "F", ...
-    Pyxidust.random_string(:password) -> "aOfw8tZpV2rdg4hlEmCysvLRUSNHB..."
+    Utils.random_string(:lower) -> "s"
+    Utils.random_string(:upper) -> "E"
+    Utils.random_string(:number) -> "6"
+    Utils.random_string(:lower_alpha) -> "2", "c", ...
+    Utils.random_string(:upper_alpha) -> "S", "8", ...
+    Utils.random_string(:combo_alpha) -> "e", "6", "F", ...
+    Utils.random_string(:password) -> "aOfw8tZpV2rdg4hlEmCysvLRUSNHB..."
     """
 
     def random_string(option) do
@@ -133,10 +133,10 @@ defmodule Pyxidust do
         USAGE:
         ------
         # quickly check a type
-        Pyxidust.type(3.14) -> "float"
+        Utils.type(3.14) -> "float"
         # compare equality in a control structure
-        Pyxidust.type(:a) === "atom" -> true
-        Pyxidust.type(:a) !== "atom" -> false
+        Utils.type(:a) === "atom" -> true
+        Utils.type(:a) !== "atom" -> false
         """
         cond do
             is_atom(value) -> "atom"
